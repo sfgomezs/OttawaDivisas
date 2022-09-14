@@ -1,0 +1,34 @@
+/* MIXIN */
+
+@mixin dimenciones-ped-gr {
+    width: 26vw;
+    height: 26vw;
+    left: .65vw;
+    opacity: 0;
+}
+
+@mixin dimenciones-ped-med {
+    width: 65vh;
+    height: 65vh;
+    left: 4vw;
+}
+
+@mixin dimenciones-ped-sm {
+    width: 65vh;
+    height: 55vh;
+    left: 4vw; 
+}
+
+@mixin display-flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin display-flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

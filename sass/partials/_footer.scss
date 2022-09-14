@@ -1,0 +1,21 @@
+/* FOOTER */
+
+footer{
+    text-align: map-get($map: $estilo-c, $key: centro);
+    margin: ($spacing-s)/2 $spacing-xxl;
+    font-size: $font-s;
+    padding-top: $spacing-m;
+
+    .redes{
+        @include display-flex-row;
+    
+        .redes__item{
+            max-width: $spacing-xl;
+            transition: transform $time-s;
+        }
+    
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+}

@@ -1,0 +1,33 @@
+/* NORMALIZE */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ html{
+    font-size: 62.5%;
+ }
+
+ body{
+    background-color: $color-base;
+    font-family: 'Baloo Da 2', cursive;
+    min-width: 312px;
+ }
+
+ main{
+    color: $color-secundario;
+ }
+
+ul{
+    list-style-type: none;
+}
+ 
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+}

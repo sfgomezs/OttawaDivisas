@@ -1,0 +1,117 @@
+/* PEDIDOS */
+
+#formulario-pedidos{
+    h2{
+        font-size: $font-l;
+        padding-top: $spacing-m;
+        text-align: map-get($map: $estilo-c, $key: centro);
+    }
+
+    .pedidos{
+        font-size: $font-s;
+        margin-top: $spacing-m;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(7, 24vw); 
+        align-items: top;
+        justify-content: map-get($map: $estilo-c, $key: centro);
+        justify-items: map-get($map: $estilo-c, $key: centro);
+        gap: $spacing-l;
+
+        .pedidos__input{
+            position: absolute;
+            left: 0;
+        }
+
+        .pedidos__entrada{
+            grid-column: 3/6;
+            grid-row: 1/3;
+            position: relative;
+            text-align: map-get($map: $estilo-c, $key: centro);
+            padding: 0 .5vw;
+            border: solid $color-con;
+
+            @each $ent in ensalada, fruta {
+                ##{$ent}{
+                    @include dimenciones-ped-gr;
+                }   
+            }
+        }
+
+        .pedidos__sopas{
+            grid-column: 6/9;
+            grid-row: 1/3;
+            position: relative;
+            text-align: map-get($map: $estilo-c, $key: centro);
+            padding: 0 .5vw;
+            border: solid $color-con;
+
+            @each $sop in ajiaco, casuela {
+                ##{$sop}{
+                    @include dimenciones-ped-gr;
+                }
+            }       
+        }  
+        
+        .pedidos__proteina{
+            grid-column: 3/6;
+            grid-row: 3/6;
+            position: relative;
+            text-align: map-get($map: $estilo-c, $key: centro);
+            padding: 0 .7vw;
+            border: solid $color-con;
+
+            @each $pro in pescado, ave, vacuno {
+                ##{$pro}{
+                    @include dimenciones-ped-gr;
+                }
+            }
+        }
+
+        .pedidos__acom{
+            grid-column: 6/9;
+            grid-row: 3/6;
+            position: relative;
+            text-align: map-get($map: $estilo-c, $key: centro);
+            padding: 0 .7vw;
+            border: solid $color-con;
+
+            @each $acom in arroz, papa, frijol {
+                ##{$acom}{
+                    @include dimenciones-ped-gr;
+                }
+            }
+        }
+
+        .pedidos__com{
+            grid-column: 4/8;
+            grid-row: 6/7;
+
+            #comentarios{
+                height: 20vw;
+            }
+        }
+        
+        .pedidos__dat-ent{
+            grid-column: 3/9;
+            grid-row: 7/8;
+        }
+
+        .pedidos__submit{
+            grid-column: 5/6;
+            grid-row: 8/9;
+        }
+
+        label{
+            display:none;
+        }
+
+        .pedidos__lab{
+            display: block;
+        }
+
+        h4{
+            margin-bottom: 8vw;
+        }
+    }
+}

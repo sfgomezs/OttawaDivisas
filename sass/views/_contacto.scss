@@ -1,0 +1,20 @@
+/* CONTACTO */
+
+.contacto{
+    margin-top: $spacing-xl;
+
+    .col{
+        text-align: map-get($map: $estilo-c, $key: centro);
+
+        .contacto__datos{
+            @include display-flex-col;
+            .contacto__img{
+                max-width: ($spacing-xxl)-($spacing-s);
+            }
+        }
+
+        .contacto__form{
+            @include display-flex-col;
+        }
+    }
+}

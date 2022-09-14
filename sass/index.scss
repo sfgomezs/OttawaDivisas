@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;600&family=Caveat&family=Satisfy&display=swap');
+
+/* MISC */
+
+@import './misc/variables';
+@import './misc/normalize';
+@import './misc/mixins';
+
+/* PARTIALS */
+
+@import './partials/header';
+@import './partials/footer';
+
+/* VIEWS */
+
+@import './views/home';
+@import './views/pedidos';
+@import './views/nosotros';
+@import './views/noticias';
+@import './views/contacto';
+
+/* MEDIA */
+
+@media screen and (max-width: 823px) {
+
+    main{
+        .container{
+            max-width: 70vw;
+        }
+    }
+
+    #formulario-pedidos{
+        .pedidos{
+            @include display-flex-col;
+            gap: $spacing-m;
+
+            .pedidos__entrada{
+                @each $ent in ensalada, fruta {
+                    ##{$ent}{
+                        @include dimenciones-ped-med;
+                    }   
+                }
+            }
+        
+            .pedidos__sopas{
+                @each $sop in ajiaco, casuela {
+                    ##{$sop}{
+                        @include dimenciones-ped-med;
+                    }
+                }  
+            }
+            
+            .pedidos__proteina{
+                @each $pro in pescado, ave, vacuno {
+                    ##{$pro}{
+                        @include dimenciones-ped-med;
+                    }
+                }                
+            }
+            
+            .pedidos__acom{
+                @each $acom in arroz, papa, frijol {
+                    ##{$acom}{
+                        @include dimenciones-ped-med;
+                    }
+                }                
+            }       
+        }      
+    }   
+
+    .noticias{
+        @include display-flex-col;
+        gap: $spacing-m;
+    }
+
+    .nosotros{
+        @include display-flex-col;
+        gap: $spacing-m;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    main{
+        .container{
+            max-width: 100%;
+        }
+    }
+    
+    #formulario-pedidos{
+        .pedidos{
+            .pedidos__entrada{
+                @each $ent in ensalada, fruta {
+                    ##{$ent}{
+                        @include dimenciones-ped-sm;
+                    }   
+                }
+            }
+        
+            .pedidos__sopas{
+                @each $sop in ajiaco, casuela {
+                    ##{$sop}{
+                        @include dimenciones-ped-sm;
+                    }
+                }  
+            }
+            
+            .pedidos__proteina{
+                @each $pro in pescado, ave, vacuno {
+                    ##{$pro}{
+                        @include dimenciones-ped-sm;
+                    }
+                }                
+            }
+            
+            .pedidos__acom{
+                @each $acom in arroz, papa, frijol {
+                    ##{$acom}{
+                        @include dimenciones-ped-sm;
+                    }
+                }                
+            }  
+        }       
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    header{
+        .navbar{
+            justify-items: map-get($map: $estilo-c, $key: centro);
+            justify-content: map-get($map: $estilo-c, $key: centro);
+            align-content: map-get($map: $estilo-c, $key: centro);
+            gap: $spacing-s;
+        } 
+    }
+
+    .contacto{
+        @include display-flex-col;
+        gap: ($spacing-l)-($spacing-s);
+        padding-top: $spacing-xl;
+    }
+}

@@ -1,0 +1,422 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;600&family=Caveat&family=Satisfy&display=swap");
+/* MISC */
+/* COLOR */
+/* FUENTES */
+/* SPACING */
+/* TRANSFORM */
+/* MAPA */
+/* NORMALIZE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background-color: #849fbe;
+  font-family: 'Baloo Da 2', cursive;
+  min-width: 312px; }
+
+main {
+  color: #0e3141; }
+
+ul {
+  list-style-type: none; }
+
+a {
+  text-decoration: none; }
+
+img {
+  width: 100%; }
+
+/* MIXIN */
+/* PARTIALS */
+/* HEADER */
+header, header .navbar {
+  background-color: #1d3142;
+  color: #fff; }
+  header .navbar .nav__logo {
+    margin-left: 3rem; }
+  header .navbar .nav__img {
+    max-width: 5rem;
+    display: inline-block; }
+  header .navbar h1 {
+    font-family: Caveat;
+    font-size: 4.5rem;
+    padding-left: 3rem;
+    display: inline-block;
+    margin: 0 2rem; }
+  header .navbar .menu {
+    display: flex;
+    gap: 1rem;
+    align-items: center; }
+    header .navbar .menu .menu__item {
+      background-color: #fff;
+      width: 7rem;
+      border-radius: 3rem;
+      text-align: center;
+      transition: transform 0.5s; }
+      header .navbar .menu .menu__item .menu__link {
+        font-size: 1.2em;
+        color: #1d3142;
+        padding: 0 1rem; }
+    header .navbar .menu:hover {
+      transform: scale(1.1); }
+    header .navbar .menu .menu__item--active {
+      border-bottom: 0.3rem solid #6a6464; }
+  header .navbar-expand-md .navbar-collapse {
+    flex-direction: column-reverse;
+    flex-grow: .5; }
+  header .navbar-expand-md .navbar-toggler {
+    margin-right: 3rem; }
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin: 0.5rem 5rem;
+  font-size: 1.5rem;
+  padding-top: 2rem; }
+  footer .redes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
+    footer .redes .redes__item {
+      max-width: 3rem;
+      transition: transform 0.5s; }
+    footer .redes:hover {
+      transform: scale(1.2); }
+
+/* VIEWS */
+/* HOME */
+main .baner {
+  min-height: 15rem;
+  background-image: url(../img/banner.jpg);
+  background-size: cover;
+  color: #fff; }
+  main .baner h2 {
+    font-size: 2.5rem;
+    padding: 1rem; }
+  main .baner h3 {
+    font-size: 2rem;
+    padding: 0 1rem 1rem; }
+  main .baner p {
+    font-size: 1.5rem;
+    padding: 0 1rem 1rem; }
+
+main .galery__title {
+  font-size: 2rem;
+  padding: 2rem 1rem 0 1rem;
+  text-align: center; }
+
+main .container {
+  max-width: 50vw; }
+
+/* PEDIDOS */
+#formulario-pedidos h2 {
+  font-size: 2.5rem;
+  padding-top: 2rem;
+  text-align: center; }
+
+#formulario-pedidos .pedidos {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(7, 24vw);
+  align-items: top;
+  justify-content: center;
+  justify-items: center;
+  gap: 2.5rem; }
+  #formulario-pedidos .pedidos .pedidos__input {
+    position: absolute;
+    left: 0; }
+  #formulario-pedidos .pedidos .pedidos__entrada {
+    grid-column: 3/6;
+    grid-row: 1/3;
+    position: relative;
+    text-align: center;
+    padding: 0 .5vw;
+    border: solid #6d99ac; }
+    #formulario-pedidos .pedidos .pedidos__entrada #ensalada {
+      width: 26vw;
+      height: 26vw;
+      left: .65vw;
+      opacity: 0; }
+    #formulario-pedidos .pedidos .pedidos__entrada #fruta {
+      width: 26vw;
+      height: 26vw;
+      left: .65vw;
+      opacity: 0; }
+  #formulario-pedidos .pedidos .pedidos__sopas {
+    grid-column: 6/9;
+    grid-row: 1/3;
+    position: relative;
+    text-align: center;
+    padding: 0 .5vw;
+    border: solid #6d99ac; }
+    #formulario-pedidos .pedidos .pedidos__sopas #ajiaco {
+      width: 26vw;
+      height: 26vw;
+      left: .65vw;
+      opacity: 0; }
+    #formulario-pedidos .pedidos .pedidos__sopas #casuela {
+      width: 26vw;
+      height: 26vw;
+      left: .65vw;
+      opacity: 0; }
+  #formulario-pedidos .pedidos .pedidos__proteina {
+    grid-column: 3/6;
+    grid-row: 3/6;
+    position: relative;
+    text-align: center;
+    padding: 0 .7vw;
+    border: solid #6d99ac; }
+    #formulario-pedidos .pedidos .pedidos__proteina #pescado {
+      width: 26vw;
+      height: 26vw;
+      left: .65vw;
+      opacity: 0; }
+    #formulario-pedidos .pedidos .pedidos__proteina #ave {
+      width: 26vw;
+      height: 26vw;
+      left: .65vw;
+      opacity: 0; }
+    #formulario-pedidos .pedidos .pedidos__proteina #vacuno {
+      width: 26vw;
+      height: 26vw;
+      left: .65vw;
+      opacity: 0; }
+  #formulario-pedidos .pedidos .pedidos__acom {
+    grid-column: 6/9;
+    grid-row: 3/6;
+    position: relative;
+    text-align: center;
+    padding: 0 .7vw;
+    border: solid #6d99ac; }
+    #formulario-pedidos .pedidos .pedidos__acom #arroz {
+      width: 26vw;
+      height: 26vw;
+      left: .65vw;
+      opacity: 0; }
+    #formulario-pedidos .pedidos .pedidos__acom #papa {
+      width: 26vw;
+      height: 26vw;
+      left: .65vw;
+      opacity: 0; }
+    #formulario-pedidos .pedidos .pedidos__acom #frijol {
+      width: 26vw;
+      height: 26vw;
+      left: .65vw;
+      opacity: 0; }
+  #formulario-pedidos .pedidos .pedidos__com {
+    grid-column: 4/8;
+    grid-row: 6/7; }
+    #formulario-pedidos .pedidos .pedidos__com #comentarios {
+      height: 20vw; }
+  #formulario-pedidos .pedidos .pedidos__dat-ent {
+    grid-column: 3/9;
+    grid-row: 7/8; }
+  #formulario-pedidos .pedidos .pedidos__submit {
+    grid-column: 5/6;
+    grid-row: 8/9; }
+  #formulario-pedidos .pedidos label {
+    display: none; }
+  #formulario-pedidos .pedidos .pedidos__lab {
+    display: block; }
+  #formulario-pedidos .pedidos h4 {
+    margin-bottom: 8vw; }
+
+/* NOSOTROS */
+.nosotros {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 1rem;
+  justify-items: center; }
+  .nosotros h2 {
+    grid-column: 1/13;
+    grid-row: 1; }
+  .nosotros .nosotros__historia {
+    grid-column: 2/9;
+    grid-row: 2/5; }
+  .nosotros .historia__img {
+    grid-column: 9/12;
+    grid-row: 2/5; }
+  .nosotros h3 {
+    grid-column: 2/12;
+    grid-row: 5/6; }
+  .nosotros .nosotros__pro {
+    grid-column: 2/7;
+    grid-row: 6/9; }
+  .nosotros .nosotros__inn {
+    grid-column: 7/12;
+    grid-row: 6/9; }
+  .nosotros .nosotros__sos {
+    grid-column: 2/12;
+    grid-row: 9/11; }
+
+/* NOTICIAS */
+.noticias {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 1fr); }
+  .noticias h2 {
+    grid-column: 3/7;
+    grid-row: 1; }
+  .noticias .noticias-1 {
+    grid-column: 2/8;
+    grid-row: 2/6; }
+  .noticias .noticias-2 {
+    grid-column: 2/8;
+    grid-row: 6/11; }
+  .noticias aside {
+    grid-column: 9/12;
+    grid-row: 1/11; }
+
+/* CONTACTO */
+.contacto {
+  margin-top: 3rem; }
+  .contacto .col {
+    text-align: center; }
+    .contacto .col .contacto__datos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .contacto .col .contacto__datos .contacto__img {
+        max-width: 4rem; }
+    .contacto .col .contacto__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+
+/* MEDIA */
+@media screen and (max-width: 823px) {
+  main .container {
+    max-width: 70vw; }
+  #formulario-pedidos .pedidos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; }
+    #formulario-pedidos .pedidos .pedidos__entrada #ensalada {
+      width: 65vh;
+      height: 65vh;
+      left: 4vw; }
+    #formulario-pedidos .pedidos .pedidos__entrada #fruta {
+      width: 65vh;
+      height: 65vh;
+      left: 4vw; }
+    #formulario-pedidos .pedidos .pedidos__sopas #ajiaco {
+      width: 65vh;
+      height: 65vh;
+      left: 4vw; }
+    #formulario-pedidos .pedidos .pedidos__sopas #casuela {
+      width: 65vh;
+      height: 65vh;
+      left: 4vw; }
+    #formulario-pedidos .pedidos .pedidos__proteina #pescado {
+      width: 65vh;
+      height: 65vh;
+      left: 4vw; }
+    #formulario-pedidos .pedidos .pedidos__proteina #ave {
+      width: 65vh;
+      height: 65vh;
+      left: 4vw; }
+    #formulario-pedidos .pedidos .pedidos__proteina #vacuno {
+      width: 65vh;
+      height: 65vh;
+      left: 4vw; }
+    #formulario-pedidos .pedidos .pedidos__acom #arroz {
+      width: 65vh;
+      height: 65vh;
+      left: 4vw; }
+    #formulario-pedidos .pedidos .pedidos__acom #papa {
+      width: 65vh;
+      height: 65vh;
+      left: 4vw; }
+    #formulario-pedidos .pedidos .pedidos__acom #frijol {
+      width: 65vh;
+      height: 65vh;
+      left: 4vw; }
+  .noticias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; }
+  .nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; } }
+
+@media screen and (max-width: 650px) {
+  main .container {
+    max-width: 100%; }
+  #formulario-pedidos .pedidos .pedidos__entrada #ensalada {
+    width: 65vh;
+    height: 55vh;
+    left: 4vw; }
+  #formulario-pedidos .pedidos .pedidos__entrada #fruta {
+    width: 65vh;
+    height: 55vh;
+    left: 4vw; }
+  #formulario-pedidos .pedidos .pedidos__sopas #ajiaco {
+    width: 65vh;
+    height: 55vh;
+    left: 4vw; }
+  #formulario-pedidos .pedidos .pedidos__sopas #casuela {
+    width: 65vh;
+    height: 55vh;
+    left: 4vw; }
+  #formulario-pedidos .pedidos .pedidos__proteina #pescado {
+    width: 65vh;
+    height: 55vh;
+    left: 4vw; }
+  #formulario-pedidos .pedidos .pedidos__proteina #ave {
+    width: 65vh;
+    height: 55vh;
+    left: 4vw; }
+  #formulario-pedidos .pedidos .pedidos__proteina #vacuno {
+    width: 65vh;
+    height: 55vh;
+    left: 4vw; }
+  #formulario-pedidos .pedidos .pedidos__acom #arroz {
+    width: 65vh;
+    height: 55vh;
+    left: 4vw; }
+  #formulario-pedidos .pedidos .pedidos__acom #papa {
+    width: 65vh;
+    height: 55vh;
+    left: 4vw; }
+  #formulario-pedidos .pedidos .pedidos__acom #frijol {
+    width: 65vh;
+    height: 55vh;
+    left: 4vw; } }
+
+@media screen and (max-width: 400px) {
+  header .navbar {
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 1rem; }
+  .contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-top: 3rem; } }
