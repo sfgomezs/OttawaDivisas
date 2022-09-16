@@ -47,6 +47,31 @@
                 Somos una organización dedicada a la compra y venta de divisas.
             </p>
         </section>
+        <section class="cambio">
+            <h2>Divisa a comprar</h2>
+            <select name="divisaCompra" id="divisaCompra" size="1" onchange>
+                <option value="0">Seleccione la divisa que desea comprar</option>
+                <option value="1">Dolares US</option>
+                <option value="2">Euros</option>
+                <option value="3">Pesos Mexicanos</option>
+                <option value="4">Pesos Argentinos</option>
+                <option value="5">Pesos Colombianos</option>
+                <option value="6">Soles Pesuanos</option>
+            </select>
+            <h2>Cantidad que va a comprar</h2>
+            <input type="text" id="cantidadCompra">
+            <h2>Divisa con la que paga</h2>
+            <select name="divisaPaga" id="divisaPaga">
+                <option value="0">Seleccione la divisa que desea comprar</option>
+                <option value="1">Dolares US</option>
+                <option value="2">Euros</option>
+                <option value="3">Pesos Mexicanos</option>
+                <option value="4">Pesos Argentinos</option>
+                <option value="5">Pesos Colombianos</option>
+                <option value="6">Soles Pesuanos</option>
+            </select>
+            <input type="button" value="enviar" id="enviar">
+        </section>
         <h2 class="galery__title">Galeria</h2>
         <section class="container">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
@@ -104,6 +129,6 @@
     <script>
     AOS.init();
     </script>
-    <script src="./index.js"></script>
+    <!-- <script src="./index.js"></script> -->
 </body>
 </html>

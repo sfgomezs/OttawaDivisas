@@ -28,7 +28,7 @@ const precioDiv = (divCom, divPag, cantidad) => {
 }
 
 /*divisa que desea comprar */
-let divisacom = prompt(`Por favor seleccione la divisa que desea adquirir: 1-${divisas[0].nombre} / 2-${divisas[1].nombre} / 3-${divisas[2].nombre} / 4-${divisas[3].nombre} / 5-${divisas[4].nombre} / 6-${divisas[5].nombre}`);
+let divisacom = document.getElementById("divisaCompra");
 divisacom = parseInt(divisacom);
 switch (divisacom) {
     case 1:
@@ -61,10 +61,10 @@ switch (divisacom) {
 }
 
 /* cantidad a comprar */
-let cantidad = prompt("Ingrese la cantidad que desea comprar: ");
+let cantidad = document.getElementById("cantidadCompra");
 
 /* divica con la que va a pagar y costo */
-let divisapag = prompt("Por favor seleccione la divisa con la que paga: 1-Peso CLP / 2-Dolar US / 3-Euro / 4-Peso Mex / 5-Peso Arg / 6-Peso Col / 7-Sol");
+let divisapag = document.getElementById("divisaPaga");
 divisapag = parseInt(divisapag);
 switch (divisapag) {
     
@@ -114,6 +114,18 @@ switch (divisapag) {
         break;
 }
 
-let parrafo = document.createElement("h2");
+
+/* let parrafo = document.createElement("h2");
 parrafo.innerHTML = `Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`;
-document.body.append(parrafo);
+document.body.append(parrafo); */
+
+
+let parrafo = document.createElement("h2");
+let boton = document.getElementById("enviar");
+boton.addEventListener("click", respuesta);
+
+function respuesta() {
+    alert("La opcion seleccionada es invalida")
+    parrafo.innerHTML = `Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`;
+    document.body.append(parrafo);
+}
