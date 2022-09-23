@@ -72,7 +72,9 @@ let cantidad;
 let cantidadCom = document.getElementById("cantidadCompra");
 cantidadCom.addEventListener('input', () => {
     cantidad = parseInt(cantidadCom.value);
+    localStorage.setItem('can', cantidadCom.value);
 })
+
 
 /* divisa con la que va a pagar y costo */
 let costo;
@@ -123,10 +125,16 @@ divisaPaga.addEventListener('input', () => {
 })
 
 let transa = document.getElementById("transaccion");
-let boton = document.getElementById("enviar");
-boton.addEventListener("click", respuesta);
+let botonEnv = document.getElementById("enviar");
+botonEnv.addEventListener("click", respuesta);
+let botonConf = document.getElementById("confirmar");
+botonEnv.addEventListener("click", finTransaccion);
 
 function respuesta() {
     transa.innerText = `Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`;
     document.body.append(parrafo);
+}
+
+function finTransaccion() {
+
 }
