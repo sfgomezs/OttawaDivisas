@@ -8,15 +8,21 @@ class Divisa{
 }
  
 class Transaccion{
-    constructor(cantidad, divisaCompra, valor, divisaPaga){
+    constructor(id, cantidad, divisaCompra, valor, divisaPaga){
+        this.id = id;
         this.cantidad = cantidad;
         this.divisaCompra = divisaCompra;
         this.valor = valor;
         this.divisaPaga = divisaPaga;
     }
 }
+let idTransaccion = 0;
 const divisas = [];
 const transacciones = [];
+
+const contenedorWallet = document.querySelector("#items");
+const contenedorFooterWatller = document.querySelector("#footer")
+
 divisas.push(new Divisa("Dolares US", 882.51));
 divisas.push(new Divisa("Euros", 882.35));
 divisas.push(new Divisa("Pesos Mexicanos", 44.06));
@@ -25,6 +31,27 @@ divisas.push(new Divisa("Pesos Colombianos", 0.20));
 divisas.push(new Divisa("Soles Peruanos", 230.29));
 divisas.push(new Divisa("pesos Chilenos", 1));
 
+const actualizarWallet = () => {
+    contenedorWallet.innerHTML = "";
+    transacciones.forEach(
+        (elemento) => {
+            let filaWallet = document.createElement("tr");
+            filaWallet.innerHTML = `
+                <td>${elemento.id}</td>
+                <td>${elemento.cantidad}</td>
+                <td>${elemento.divisaCompra}</td>
+                <td>${elemento.valor}</td>
+                <td>${elemento.divisaPaga}</td>
+            `;
+            contenedorWallet.append(filaWallet);
+        }
+    );
+    if(transacciones ==0) {
+        contenedorFooterWatller.innerHTML = `<th scope="row" colspan="6">No has realizado ninguna transacción!</th>`;
+    } else {
+        contenedorFooterWatller.innerHTML = `<th scope="row" colspan="6">Total de transacciones: ${idTransaccion}</th>`;
+    }
+}
 /* funcion para calcular precio en pesos chilenos */
 const precioClp = (cambio, cantidad) => {
     let precio = cambio*cantidad;
@@ -158,7 +185,9 @@ function respuesta() {
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
-            transacciones.push(new Transaccion(cantidad, divisacom.nombre, costo, divisapag.nombre));
+            idTransaccion ++;
+            transacciones.push(new Transaccion(idTransaccion ,cantidad, divisacom.nombre, costo, divisapag.nombre));
+            actualizarWallet();
           swalWithBootstrapButtons.fire(
             'Felicitaciones!',
             'La transacción se realizo exitosamente.',
