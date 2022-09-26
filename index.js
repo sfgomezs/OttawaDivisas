@@ -46,12 +46,10 @@ const actualizarWallet = () => {
             contenedorWallet.append(filaWallet);
         }
     );
-    if(transacciones ==0) {
-        contenedorFooterWatller.innerHTML = `<th scope="row" colspan="6">No has realizado ninguna transacción!</th>`;
-    } else {
-        contenedorFooterWatller.innerHTML = `<th scope="row" colspan="6">Total de transacciones: ${idTransaccion}</th>`;
-    }
+    transacciones == 0 ? contenedorFooterWatller.innerHTML = `<th scope="row" colspan="6">No has realizado ninguna transacción!</th>` : contenedorFooterWatller.innerHTML = `<th scope="row" colspan="6">Total de transacciones: ${idTransaccion}</th>`;
 }
+
+const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor)};
 /* funcion para calcular precio en pesos chilenos */
 const precioClp = (cambio, cantidad) => {
     let precio = cambio*cantidad;
@@ -108,7 +106,6 @@ let cantidad;
 let cantidadCom = document.getElementById("cantidadCompra");
 cantidadCom.addEventListener('input', () => {
     cantidad = parseInt(cantidadCom.value);
-    localStorage.setItem('can', cantidadCom.value);
 })
 
 
@@ -160,11 +157,8 @@ divisaPaga.addEventListener('input', () => {
     }
 })
 
-/* let transa = document.getElementById("transaccion"); */
 let botonEnv = document.getElementById("enviar");
 botonEnv.addEventListener("click", respuesta);
-/* let botonConf = document.getElementById("confirmar");
-botonEnv.addEventListener("click", finTransaccion); */
 
 function respuesta() {
     const swalWithBootstrapButtons = Swal.mixin({
@@ -173,8 +167,7 @@ function respuesta() {
           cancelButton: 'btn btn-danger'
         },
         buttonsStyling: false
-      })
-      
+      })   
       swalWithBootstrapButtons.fire({
         title: 'Esta seguro de realizar la transacción?',
         text: `Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`,
@@ -188,6 +181,7 @@ function respuesta() {
             idTransaccion ++;
             transacciones.push(new Transaccion(idTransaccion ,cantidad, divisacom.nombre, costo, divisapag.nombre));
             actualizarWallet();
+            guardarLocal("ListaTnsansacciones", JSON.stringify(transacciones));
           swalWithBootstrapButtons.fire(
             'Felicitaciones!',
             'La transacción se realizo exitosamente.',
@@ -197,7 +191,6 @@ function respuesta() {
             const modalToggle = document.getElementById('toggleMyModal'); 
             myModal.show(modalToggle);
             console.log(transacciones[0]);
-
         } else if (
           /* Read more about handling dismissals below */
           result.dismiss === Swal.DismissReason.cancel
@@ -209,10 +202,4 @@ function respuesta() {
           )
         }
       })
-    /* transa.innerText = `Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`;
-    document.body.append(parrafo); */
 }
-
-/* function finTransaccion() {
-
-} */

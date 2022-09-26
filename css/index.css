@@ -47,6 +47,9 @@ img {
   display: block;
   margin: 0 auto;}
 
+.modal-title {
+  font-size: 2rem;}
+
 /* MIXIN */
 /* PARTIALS */
 /* HEADER */
@@ -177,109 +180,11 @@ main .container {
 /* MEDIA */
 @media screen and (max-width: 823px) {
   main .container {
-    max-width: 70vw; }
-  #formulario-pedidos .pedidos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem; }
-    #formulario-pedidos .pedidos .pedidos__entrada #ensalada {
-      width: 65vh;
-      height: 65vh;
-      left: 4vw; }
-    #formulario-pedidos .pedidos .pedidos__entrada #fruta {
-      width: 65vh;
-      height: 65vh;
-      left: 4vw; }
-    #formulario-pedidos .pedidos .pedidos__sopas #ajiaco {
-      width: 65vh;
-      height: 65vh;
-      left: 4vw; }
-    #formulario-pedidos .pedidos .pedidos__sopas #casuela {
-      width: 65vh;
-      height: 65vh;
-      left: 4vw; }
-    #formulario-pedidos .pedidos .pedidos__proteina #pescado {
-      width: 65vh;
-      height: 65vh;
-      left: 4vw; }
-    #formulario-pedidos .pedidos .pedidos__proteina #ave {
-      width: 65vh;
-      height: 65vh;
-      left: 4vw; }
-    #formulario-pedidos .pedidos .pedidos__proteina #vacuno {
-      width: 65vh;
-      height: 65vh;
-      left: 4vw; }
-    #formulario-pedidos .pedidos .pedidos__acom #arroz {
-      width: 65vh;
-      height: 65vh;
-      left: 4vw; }
-    #formulario-pedidos .pedidos .pedidos__acom #papa {
-      width: 65vh;
-      height: 65vh;
-      left: 4vw; }
-    #formulario-pedidos .pedidos .pedidos__acom #frijol {
-      width: 65vh;
-      height: 65vh;
-      left: 4vw; }
-  .noticias {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem; }
-  .nosotros {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem; } }
+    max-width: 70vw; }}
 
 @media screen and (max-width: 650px) {
   main .container {
-    max-width: 100%; }
-  #formulario-pedidos .pedidos .pedidos__entrada #ensalada {
-    width: 65vh;
-    height: 55vh;
-    left: 4vw; }
-  #formulario-pedidos .pedidos .pedidos__entrada #fruta {
-    width: 65vh;
-    height: 55vh;
-    left: 4vw; }
-  #formulario-pedidos .pedidos .pedidos__sopas #ajiaco {
-    width: 65vh;
-    height: 55vh;
-    left: 4vw; }
-  #formulario-pedidos .pedidos .pedidos__sopas #casuela {
-    width: 65vh;
-    height: 55vh;
-    left: 4vw; }
-  #formulario-pedidos .pedidos .pedidos__proteina #pescado {
-    width: 65vh;
-    height: 55vh;
-    left: 4vw; }
-  #formulario-pedidos .pedidos .pedidos__proteina #ave {
-    width: 65vh;
-    height: 55vh;
-    left: 4vw; }
-  #formulario-pedidos .pedidos .pedidos__proteina #vacuno {
-    width: 65vh;
-    height: 55vh;
-    left: 4vw; }
-  #formulario-pedidos .pedidos .pedidos__acom #arroz {
-    width: 65vh;
-    height: 55vh;
-    left: 4vw; }
-  #formulario-pedidos .pedidos .pedidos__acom #papa {
-    width: 65vh;
-    height: 55vh;
-    left: 4vw; }
-  #formulario-pedidos .pedidos .pedidos__acom #frijol {
-    width: 65vh;
-    height: 55vh;
-    left: 4vw; } }
+    max-width: 100%; }}
 
 @media screen and (max-width: 400px) {
   header .navbar {
