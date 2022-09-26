@@ -124,17 +124,51 @@ divisaPaga.addEventListener('input', () => {
     }
 })
 
-let transa = document.getElementById("transaccion");
+/* let transa = document.getElementById("transaccion"); */
 let botonEnv = document.getElementById("enviar");
 botonEnv.addEventListener("click", respuesta);
-let botonConf = document.getElementById("confirmar");
-botonEnv.addEventListener("click", finTransaccion);
+/* let botonConf = document.getElementById("confirmar");
+botonEnv.addEventListener("click", finTransaccion); */
 
 function respuesta() {
-    transa.innerText = `Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`;
-    document.body.append(parrafo);
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
+      
+      swalWithBootstrapButtons.fire({
+        title: 'Esta seguro de realizar la transacción?',
+        text: `Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, realizar transacción!',
+        cancelButtonText: 'No, cancelar!',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Felicitaciones!',
+            'La transacción se realizo exitosamente.',
+            'success'
+          )
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'Cancelada',
+            'La transacción fue cancelada',
+            'error'
+          )
+        }
+      })
+    /* transa.innerText = `Por la compra de ${cantidad} ${divisacom.nombre} debe pagar ${costo} ${divisapag.nombre}`;
+    document.body.append(parrafo); */
 }
 
-function finTransaccion() {
+/* function finTransaccion() {
 
-}
+} */
