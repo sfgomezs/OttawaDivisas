@@ -20,6 +20,9 @@ let idTransaccion = 0;
 const divisas = [];
 const transacciones = [];
 
+let transaccionesLS = localStorage.getItem('ListaTnsansacciones');
+transaccionesLS = JSON.parse(transaccionesLS);
+
 const contenedorWallet = document.querySelector("#items");
 const contenedorFooterWatller = document.querySelector("#footer")
 
@@ -46,7 +49,14 @@ const actualizarWallet = () => {
             contenedorWallet.append(filaWallet);
         }
     );
-    transacciones == 0 ? contenedorFooterWatller.innerHTML = `<th scope="row" colspan="6">No has realizado ninguna transacción!</th>` : contenedorFooterWatller.innerHTML = `<th scope="row" colspan="6">Total de transacciones: ${idTransaccion}</th>`;
+    transacciones == 0 ? contenedorFooterWatller.innerHTML = `<th scope="row" colspan="6">No has realizado ninguna transacción!</th>` : contenedorFooterWatller.innerHTML = `<th scope="row" colspan="6">Total de transacciones: ${transacciones.length}</th>`;
+}
+if(transaccionesLS){
+    for(i=0; i<transaccionesLS.length; i++){
+        transacciones[i] = transaccionesLS[i];
+        actualizarWallet();
+        idTransaccion = transacciones[i].id;
+    }
 }
 
 const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor)};
