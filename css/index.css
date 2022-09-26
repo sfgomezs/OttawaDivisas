@@ -35,6 +35,18 @@ a {
 img {
   width: 100%; }
 
+.btn {
+  margin: 0 0.5rem;
+  font-size: 1.23rem !important;}
+
+.wallet {
+  max-width: 4rem;}
+
+.flecha {
+  max-width: 5rem;
+  display: block;
+  margin: 0 auto;}
+
 /* MIXIN */
 /* PARTIALS */
 /* HEADER */
@@ -127,8 +139,13 @@ main .baner {
     padding: 1rem; }
   main .cambio{
     margin: 3rem 10rem;
-    font-size: 1.5rem;
-  }
+    font-size: 1.5rem;}
+  .swal2-popup {
+    width: 45em!important;}
+  .swal2-html-container {
+    font-size: 1.5em!important;}
+  .swal2-title {
+    font-size: 1.9em!important;
 /* main .galery__title {
   font-size: 2rem;
   padding: 2rem 1rem 0 1rem;
