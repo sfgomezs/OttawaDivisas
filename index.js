@@ -7,7 +7,16 @@ class Divisa{
     }
 }
  
+class Transaccion{
+    constructor(cantidad, divisaCompra, valor, divisaPaga){
+        this.cantidad = cantidad;
+        this.divisaCompra = divisaCompra;
+        this.valor = valor;
+        this.divisaPaga = divisaPaga;
+    }
+}
 const divisas = [];
+const transacciones = [];
 divisas.push(new Divisa("Dolares US", 882.51));
 divisas.push(new Divisa("Euros", 882.35));
 divisas.push(new Divisa("Pesos Mexicanos", 44.06));
@@ -149,11 +158,17 @@ function respuesta() {
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
+            transacciones.push(new Transaccion(cantidad, divisacom.nombre, costo, divisapag.nombre));
           swalWithBootstrapButtons.fire(
             'Felicitaciones!',
             'La transacción se realizo exitosamente.',
             'success'
           )
+            const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {keyboard: true});
+            const modalToggle = document.getElementById('toggleMyModal'); 
+            myModal.show(modalToggle);
+            console.log(transacciones[0]);
+
         } else if (
           /* Read more about handling dismissals below */
           result.dismiss === Swal.DismissReason.cancel
