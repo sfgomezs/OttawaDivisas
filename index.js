@@ -41,10 +41,10 @@ const actualizarWallet = () => {
             let filaWallet = document.createElement("tr");
             filaWallet.innerHTML = `
                 <td>${elemento.id}</td>
-                <td>${elemento.cantidad}</td>
-                <td>${elemento.divisaCompra}</td>
-                <td>${elemento.valor}</td>
-                <td>${elemento.divisaPaga}</td>
+                <td class="compra">${elemento.cantidad}</td>
+                <td class="compra">${elemento.divisaCompra}</td>
+                <td class="venta">${elemento.valor}</td>
+                <td class="venta">${elemento.divisaPaga}</td>
             `;
             contenedorWallet.append(filaWallet);
         }

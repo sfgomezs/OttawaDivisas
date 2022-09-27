@@ -48,7 +48,32 @@ img {
   margin: 0 auto;}
 
 .modal-title {
-  font-size: 2rem;}
+  font-size: 2rem;
+  color: #fff;}
+
+.compra {
+  color: rgb(37, 169, 37);
+}
+
+.venta {
+  color: rgb(252, 10, 10);
+}
+
+.btn-close {
+  color: #fff;
+  background-color: #fff;}
+
+.modal-content{
+  background-color: #000;}
+
+.table {
+  --bs-table-color: #fff;
+  --bs-table-border-color: #212529;}
+
+.modal {
+  --bs-modal-header-border-color: #000;
+  --bs-modal-footer-border-color: #000;}
+  
 
 /* MIXIN */
 /* PARTIALS */
