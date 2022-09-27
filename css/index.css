@@ -73,7 +73,25 @@ img {
 .modal {
   --bs-modal-header-border-color: #000;
   --bs-modal-footer-border-color: #000;}
-  
+
+#nombre {
+  width: 30vw;
+  font-size: 1.5rem;
+}
+
+#email {
+  width: 30vw;
+  font-size: 1.5rem;
+}
+
+#mensaje {
+  width: 30vw;
+  font-size: 1.5rem;
+}
+
+#btn_submit {
+  font-size: 1.5rem;
+}
 
 /* MIXIN */
 /* PARTIALS */
